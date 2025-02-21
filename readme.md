@@ -42,7 +42,7 @@ _Docs: [AutoHotkey v2 documentation](https://www.autohotkey.com/docs/v2/)._
 	16 | global high := 85
 	17 | global low := 15
 	18 | global critic := 10
-```
+	```
 	
 2. **Change alert frequency (`delta`):**
 	To change the frequency of alerts, change the `delta` value in line 21.
@@ -60,14 +60,14 @@ _Docs: [AutoHotkey v2 documentation](https://www.autohotkey.com/docs/v2/)._
 	
 	```
 	22 | global alert := false
-```
+	```
 	
 4. **Change default theme:**
 	To switch to dark mode as default mode change the Boolean to `true` on line 19:
 	
 	```
 	19 | global DarkMode := true
-```
+	```
 	
 5. **To change the hotkey to toggle the theme:**
 	Change the hotkey in line 5.

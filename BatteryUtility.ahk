@@ -31,7 +31,7 @@ UpdateTooltipAndAlert() {
     A_IconTip := GetFormattedBatteryStatusLevel()
 
     if BatteryLevel > high && ChargingStatus {
-      if !skip
+      if BatteryLevel != 255 and !skip
         TrayTip "Charge limit of " high "% reached.`nCurrent battery level: " BatteryLevel "%", "Unplug the Charger", "iconi"
       skip += 2
     }
@@ -91,5 +91,8 @@ GetFormattedBatteryStatusLevel() {
     default: BatterySaverEnum := "Unknown"
   }
 
-  return Format("{1}`nBattery level: {3}.0% {2}`nPower Saving Mode: {4}`n{5}", ChargingEnum, ChargeEnum, BatteryLevel, BatterySaverEnum, SystemThemeEnum)
+  if BatteryLevel != 255
+    return Format("{1}`nBattery level: {3}.0% {2}`nPower Saving Mode: {4}`n{5}", ChargingEnum, ChargeEnum, BatteryLevel, BatterySaverEnum, SystemThemeEnum)
+  else
+    return Format("Wired (no battery)`nPower Saving Mode: {4}`n{5}", ChargingEnum, ChargeEnum, BatteryLevel, BatterySaverEnum, SystemThemeEnum)
 }

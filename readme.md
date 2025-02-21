@@ -1,4 +1,5 @@
-###### *Author- [Saurav Priyadarshi](https://github.com/psaurav1290/)*
+###### *Author - [Saurav Priyadarshi](https://github.com/psaurav1290), Customization - [Gustavo Moraes](https://github.com/gustavomdsantos)*
+
 # Battery Status & Limiter
 This is a simple battery utility script written in [AutoHotkey v2.0](https://www.autohotkey.com/). It can be used to display current battery percentage right in the tray icon and also limit battery level through windows notification alerts.
 

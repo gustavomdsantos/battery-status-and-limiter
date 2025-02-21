@@ -14,11 +14,11 @@ init()
 
 init() {
   global high := 85
-  global low := 15
+  global low := 20
   global critic := 10
   global DarkMode := true
   global SystemThemeEnum := DarkMode ? "Dark Mode" : "Light Mode"
-  delta := 5000
+  delta := 30000
   global alert := true
 
   UpdateTooltipAndAlert()

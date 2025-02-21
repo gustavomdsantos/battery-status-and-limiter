@@ -1,6 +1,8 @@
 #SingleInstance force ; Only one copy of this script should run at a time.
 SendMode("Input")  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir(A_ScriptDir)  ; Ensures a consistent starting directory.
+ScriptHomepage :=
+  "https://github.com/gustavomdsantos/battery-status-and-limiter"
 
 init()
 
@@ -21,8 +23,25 @@ init() {
   delta := 30000
   global alert := true
 
+  setSysTray
+
   UpdateTooltipAndAlert()
   SetTimer(UpdateTooltipAndAlert, delta)
+}
+
+setSysTray() {
+  MyMenu := A_TrayMenu
+
+  MyMenu.Delete("8&") ; Suspend Hotkeys
+  MyMenu.Delete("7&") ; Last Separator
+  MyMenu.Delete("4&") ; Window Spy
+  MyMenu.Delete("2&") ; Help
+  MyMenu.Rename("1&", "Online Help...")
+  MyMenu.Add("1&", HelpFuncCallback)
+}
+
+HelpFuncCallback(ItemName, ItemPos, MyMenu) {
+  Run ScriptHomepage
 }
 
 UpdateTooltipAndAlert() {

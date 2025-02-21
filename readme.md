@@ -53,7 +53,7 @@ _Docs: [AutoHotkey v2 documentation](https://www.autohotkey.com/docs/v2/)._
 	21 | delta := 10000
 	```
 	
-***Note*: This will also cause to change the refresh rate of battery percentage in tray icon to once every 10sec.*
+***Note*: This will also cause to change the refresh rate of battery percentage in tray icon to once every 10sec.**
 	
 3. **To disable alert:**
 	Change the `delta` value in line 22 to `0`.

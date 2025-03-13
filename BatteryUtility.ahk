@@ -35,13 +35,19 @@ setSysTray() {
   MyMenu.Delete("8&") ; Suspend Hotkeys
   MyMenu.Delete("7&") ; Last Separator
   MyMenu.Delete("4&") ; Window Spy
-  MyMenu.Delete("2&") ; Help
-  MyMenu.Rename("1&", "Online Help...")
-  MyMenu.Add("1&", HelpFuncCallback)
+  ;MyMenu.Delete("2&") ; Help
+  MyMenu.Rename("2&", "Online Help...")
+  MyMenu.Add("2&", HelpFuncCallback)
+  MyMenu.Rename("1&", "Power Settings")
+  MyMenu.Add("1&", PwrCfgFuncCallback)
 }
 
-HelpFuncCallback(ItemName, ItemPos, MyMenu) {
+HelpFuncCallback(*) {
   Run ScriptHomepage
+}
+
+PwrCfgFuncCallback(*) {
+  Run "powercfg.cpl"
 }
 
 UpdateTooltipAndAlert() {
